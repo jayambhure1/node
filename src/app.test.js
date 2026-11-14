@@ -4,7 +4,7 @@ const app = require('./app');
 describe('POST /post-requests', () => {
   it('should reject empty request bodies', async () => {
     const response = await request(app)
-      .post('/post-requests')
+      .post('/apis/sample/post-requests')
       .send({});
 
     expect(response.statusCode).toBe(400);
@@ -16,7 +16,7 @@ describe('POST /post-requests', () => {
     const payload = { name: 'John Doe', email: 'john@example.com' };
 
     const response = await request(app)
-      .post('/post-requests')
+      .post('/apis/sample/post-requests')
       .send(payload);
 
     expect(response.statusCode).toBe(200);
